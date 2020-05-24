@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "vipulakscluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "vipulakscluster"
+    spec:
+      containers:
+        - name: "vipulakscluster"
+          image: "abhisheaacr.azurecr.io/vipulakscluster"
+          ports:
+          - containerPort: 8000
