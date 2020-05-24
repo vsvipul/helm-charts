@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "vipulakscluster"
+    labels:
+        app: "vipulakscluster"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: vipulaksclustere20b-vipulakscluster.706b2ffa28894df7913a.centralindia.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "vipulakscluster"
+                servicePort: 8000
